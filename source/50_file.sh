@@ -20,6 +20,9 @@ else
   alias lsd='CLICOLOR_FORCE=1 ll | grep --color=never "^d"'
 fi
 
+alias la='ls -al'
+alias l='ls -al'
+
 # Easier navigation: .., ..., -
 alias ..='cd ..'
 alias ...='cd ../..'
