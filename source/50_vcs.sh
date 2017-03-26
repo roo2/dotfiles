@@ -1,4 +1,5 @@
-
+#verbose ssh logging
+export GIT_SSH_COMMAND='ssh -v'
 # Git shortcuts
 
 alias g='git'
