@@ -1,4 +1,5 @@
 # Editing
+alias idea=intellij-idea-ultimate
 
 if [[ ! "$SSH_TTY" ]] && is_osx; then
   export EDITOR='mvim'

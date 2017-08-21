@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home'
+let g:netrw_dirhist_2='/home/roo2/Documents/wew/scratch.txt'
+let g:netrw_dirhist_3='/etc/NetworkManager/system-connections'
+let g:netrw_dirhist_4='/etc/profile.d'
+let g:netrw_dirhist_5='/etc/network/interfaces.d'
+let g:netrw_dirhist_6='/home/roo2/projects/aletheia/puppeth'

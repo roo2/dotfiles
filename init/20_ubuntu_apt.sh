@@ -79,18 +79,6 @@ if is_ubuntu_desktop; then
   apt_source_texts+=("deb https://www.charlesproxy.com/packages/apt/ charles-proxy3 main")
   apt_packages+=(charles-proxy)
 
-  # https://github.com/aluxian/Messenger-for-Desktop#linux
-  apt_keys+=('--keyserver pool.sks-keyservers.net --recv 6DDA23616E3FE905FFDA152AE61DA9241537994D')
-  apt_source_files+=(aluxian)
-  apt_source_texts+=("deb https://dl.bintray.com/aluxian/deb/ beta main")
-  apt_packages+=(messengerfordesktop)
-
-  # https://www.spotify.com/us/download/linux/
-  apt_keys+=('--keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886')
-  apt_source_files+=(spotify)
-  apt_source_texts+=("deb http://repository.spotify.com stable non-free")
-  apt_packages+=(spotify-client)
-
   # https://tecadmin.net/install-oracle-virtualbox-on-ubuntu/
   apt_keys+=(https://www.virtualbox.org/download/oracle_vbox_2016.asc)
   apt_source_files+=(virtualbox)
@@ -132,24 +120,6 @@ if is_ubuntu_desktop; then
   # Manage online accounts via "gnome-control-center" in launcher
   apt_packages+=(gnome-control-center gnome-online-accounts)
 
-  # https://github.com/mitchellh/vagrant/issues/7411
-  deb_installed+=(/usr/bin/vagrant)
-  deb_sources+=(https://releases.hashicorp.com/vagrant/1.9.2/vagrant_1.9.2_x86_64.deb)
-  # https://github.com/vagrant-libvirt/vagrant-libvirt/issues/575
-  # apt_packages+=(vagrant)
-  # function postinstall_vagrant() {
-  #   sudo sed -i'' "s/Specification.all = nil/Specification.reset/" /usr/lib/ruby/vendor_ruby/vagrant/bundler.rb
-  # }
-
-  # https://support.gitkraken.com/how-to-install
-  deb_installed+=(/usr/bin/gitkraken)
-  deb_sources+=(https://release.gitkraken.com/linux/gitkraken-amd64.deb)
-
-  # https://www.dropbox.com/install-linux
-  apt_packages+=(python-gtk2 python-gpgme)
-  deb_installed+=(/usr/bin/dropbox)
-  deb_sources+=("https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb")
-
   # https://github.com/raelgc/scudcloud#ubuntukubuntu-and-mint
   # http://askubuntu.com/a/852727
   add_ppa ppa:rael-gc/scudcloud
@@ -166,22 +136,7 @@ if is_ubuntu_desktop; then
     sudo update-desktop-database
   }
 
-  # http://askubuntu.com/questions/854480/how-to-install-the-steam-client/854481#854481
   apt_packages+=(python-apt)
-  deb_installed+=(/usr/bin/steam)
-  deb_sources+=(deb_source_steam)
-  function deb_source_steam() {
-    local steam_root steam_file
-    steam_root=http://repo.steampowered.com/steam/pool/steam/s/steam/
-    steam_file="$(wget -q -O- "$steam_root?C=M;O=D" | sed -En '/steam-launcher/{s/.*href="([^"]+)".*/\1/;p;q;}')"
-    echo "$steam_root$steam_file"
-  }
-  # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=772598
-  # apt_packages+=(steam)
-  # function preinstall_steam() {
-  #   echo steam steam/question select I AGREE | sudo debconf-set-selections
-  #   echo steam steam/license note | sudo debconf-set-selections
-  # }
 fi
 
 function other_stuff() {
