@@ -5,9 +5,11 @@ shopt -s histreedit
 # History expansions will be verified before execution.
 shopt -s histverify
 
+shopt -s histappend
+
 # Entries beginning with space aren't added into history, and duplicate
 # entries will be erased (leaving the most recent entry).
-export HISTCONTROL="ignorespace:erasedups"
+export HISTCONTROL="ignorespace:erasedups:ignoredups"
 # Give history timestamps.
 export HISTTIMEFORMAT="[%F %T] "
 # Lots o' history.

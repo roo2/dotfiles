@@ -26,7 +26,6 @@ apt_packages+=(
   ansible
   awscli
   build-essential
-  byobu
   cmatrix
   cowsay
   curl
@@ -37,9 +36,7 @@ apt_packages+=(
   id3tool
   imagemagick
   jq
-  mercurial
   nmap
-  postgresql
   silversearcher-ag
   sl
   telnet

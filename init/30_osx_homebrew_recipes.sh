@@ -19,9 +19,7 @@ recipes=(
   jq
   lesspipe
   man2html
-  mercurial
   nmap
-  postgres
   sl
   ssh-copy-id
   terminal-notifier
