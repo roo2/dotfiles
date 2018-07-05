@@ -5,4 +5,7 @@ is_ubuntu_desktop || return 1
 gsettings set org.gnome.desktop.wm.keybindings begin-resize '[]'
 
 
+#Stop trackpad from going off all the time while typing
+synclient PalmDetect=1
+
 alias manh='man -H'

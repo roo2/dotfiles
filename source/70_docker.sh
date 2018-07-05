@@ -1,9 +1,9 @@
-
-alias ddown="docker ps -aq | xargs docker stop"
-alias dstop="docker stop $(docker ps -aq)"
-alias drmrf="docker rm -f $(docker ps -aq)"
-alias drmi="docker rmi $(docker images -q)"
-alias dclean="drmrf && dmri && ./gradlew composeUp"
+#
+#alias ddown="docker ps -aq | xargs docker stop"
+#alias dstop="docker stop $(docker ps -aq)"
+#alias drmrf="docker rm -f $(docker ps -aq)"
+#alias drmi="docker rmi $(docker images -q)"
+#alias dclean="drmrf && dmri && ./gradlew composeUp"
 
 
 function dbash {
@@ -27,7 +27,7 @@ function dstopa {
 }
 
 function drma {
-    docker stop $(docker ps -aq)  
+    docker stop $(docker ps -aq)
     docker rm $(docker ps -aq)
 }
 

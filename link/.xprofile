@@ -4,4 +4,4 @@
 xinput disable "ELAN Touchscreen"
 
 # enable two fingered right click
-xinput --set-prop --type=int --format=8 15 "libinput Click Method Enabled" 0 1
+# xinput --set-prop "SynPS/2 Synaptics TouchPad" --type=int "libinput Click Method Enabled" 0 1

@@ -41,6 +41,7 @@ apt_packages+=(
   sl
   telnet
   tree
+  most
 )
 
 apt_packages+=(vim)

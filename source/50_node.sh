@@ -3,6 +3,7 @@
 export PATH
 PATH=~/.nave/installed/default/bin:"$(path_remove ~/.nave/installed/*/bin)"
 PATH=$PATH:./node_modules/.bin/
+
 # Set a specific version of node as the "default" for "nave use default"
 function nave_default() {
   local version
@@ -11,7 +12,7 @@ function nave_default() {
   [[ "$1" == "stable" ]] && version=$(nave stable) || version=${1#v}
   rm "$default" 2>/dev/null
   ln -s $version "$default"
-  echo "Nave default set to $version"
+#  echo "using nodejs $version with nave"
 }
 
 # Install a version of node, set as default, install npm modules, etc.
@@ -140,3 +141,4 @@ function npm-package() {
     npm install foo --save-dev && npm uninstall foo --save-dev
   fi
 }
+nave_default 8.9.1
